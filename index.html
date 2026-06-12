@@ -6,15 +6,13 @@
 <meta name="theme-color" content="#0d2818">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="WC 2026">
-<link rel="manifest" href="/manifest.json">
 <title>FIFA World Cup 2026 🏆</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 :root{--bg:#0a1628;--card:#0f1f36;--border:#1e3a5f;--green:#4ade80;--gd:#1a472a;--text:#e2e8f0;--muted:#64748b;--yellow:#fbbf24;--red:#ef4444;--blue:#60a5fa}
 html,body{height:100%;overflow-x:hidden}
-body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);display:flex;flex-direction:column;min-height:100vh}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 
 .header{background:linear-gradient(135deg,#1a472a,#0d2818);padding:12px 16px;display:flex;align-items:center;gap:11px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.5)}
 .logo{width:38px;height:38px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
@@ -28,21 +26,16 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 .nb .ico{font-size:17px}
 .nb.active{color:var(--green);border-bottom-color:var(--green);background:rgba(74,222,128,0.05)}
 
-.tab{display:none;padding:12px;flex:1;animation:fi .15s}
+.tab{display:none;padding:12px;animation:fi .15s}
 .tab.active{display:block}
 @keyframes fi{from{opacity:0}to{opacity:1}}
 
-/* SKELETON LOADER */
-.skel{background:linear-gradient(90deg,var(--card) 25%,#162035 50%,var(--card) 75%);background-size:200% 100%;animation:shimmer 1.2s infinite;border-radius:12px;margin-bottom:10px}
-@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-
-/* MATCH CARD */
 .mc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px;margin-bottom:9px}
 .mc.live-now{border-color:rgba(220,38,38,0.5)}
 .mmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
 .mstage{font-size:10px;color:var(--muted)}
 .bl{display:flex;align-items:center;gap:4px;background:rgba(220,38,38,0.15);color:#f87171;font-size:10px;font-weight:600;padding:3px 7px;border-radius:20px;border:1px solid rgba(220,38,38,0.3)}
-.bu{font-size:10px;color:var(--yellow);background:rgba(251,191,36,0.1);padding:3px 7px;border-radius:20px}
+.bu{font-size:10px;color:var(--yellow);background:rgba(251,191,36,0.1);padding:3px 7px;border-radius:20px;border:1px solid rgba(251,191,36,0.2)}
 .bd{font-size:10px;color:var(--muted);background:rgba(100,116,139,0.1);padding:3px 7px;border-radius:20px}
 .mbody{display:flex;align-items:center;justify-content:space-between;gap:4px}
 .mteam{display:flex;flex-direction:column;align-items:center;gap:3px;flex:1;min-width:0}
@@ -55,25 +48,22 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 .mtime{font-size:10px;color:var(--muted)}
 .wbtn{font-size:11px;font-weight:600;padding:6px 12px;background:rgba(26,71,42,0.8);color:var(--green);border:1px solid rgba(74,222,128,0.3);border-radius:8px;cursor:pointer}
 
-/* FILTER */
 .fbar{display:flex;gap:5px;margin-bottom:10px;overflow-x:auto;padding-bottom:2px}
 .fbar::-webkit-scrollbar{display:none}
 .fbtn{padding:5px 10px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;cursor:pointer;white-space:nowrap;flex-shrink:0}
 .fbtn.active{background:rgba(74,222,128,0.1);color:var(--green);border-color:rgba(74,222,128,0.3)}
 
-/* FIXTURE */
 .fdh{font-size:11px;font-weight:600;color:var(--green);margin:12px 0 5px}
 .fcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 11px;margin-bottom:5px;cursor:pointer}
-.fcard:active{background:#162035}
+.fcard:active{opacity:0.8}
 .fstage{font-size:9px;color:var(--muted);margin-bottom:6px}
 .frow{display:flex;align-items:center;justify-content:space-between;gap:4px}
 .ft{font-size:11px;color:var(--text);display:flex;align-items:center;gap:3px;flex:1;min-width:0}
 .ft.r{justify-content:flex-end;flex-direction:row-reverse}
-.ft span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:85px}
-.fc{font-size:11px;padding:3px 6px;border-radius:5px;background:var(--bg);text-align:center;flex-shrink:0;min-width:46px}
+.ft span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:90px}
+.fc{font-size:11px;padding:3px 6px;border-radius:5px;background:var(--bg);text-align:center;flex-shrink:0;min-width:48px}
 .fsc{font-weight:700;color:#fff}.ftm{color:var(--muted)}
 
-/* STANDINGS */
 .gcard{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden}
 .ghdr{padding:9px 12px;background:rgba(74,222,128,0.06);border-bottom:1px solid var(--border);font-size:12px;font-weight:700;color:var(--green)}
 .stt{width:100%;border-collapse:collapse}
@@ -82,27 +72,24 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 .stt td{font-size:11px;color:var(--text);padding:7px 5px;text-align:center;border-bottom:1px solid rgba(30,58,95,0.5)}
 .stt tr:last-child td{border-bottom:none}
 .pts{font-weight:700;color:var(--yellow)}
-.snote{background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.15);border-radius:8px;padding:9px 11px;margin-top:7px}
+.snote{background:rgba(251,191,36,0.05);border:1px solid rgba(251,191,36,0.15);border-radius:8px;padding:8px 10px;margin-top:7px}
 .snote-row{font-size:10px;color:#94a3b8;padding:2px 0;line-height:1.6}
 
-/* TEAMS */
 .tgrid{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.tcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px 7px;cursor:pointer;text-align:center;transition:border-color .15s}
-.tcard:active{background:#162035}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:11px 7px;cursor:pointer;text-align:center}
+.tcard:active{opacity:0.8}
 .tcfl{font-size:24px;margin-bottom:4px}
 .tcen{font-size:11px;font-weight:600;color:var(--text);margin-bottom:2px}
 .tcbn{font-size:10px;color:var(--muted)}
 
-/* STREAM */
-.scard{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:11px;margin-bottom:7px;display:flex;align-items:center;gap:11px;cursor:pointer;text-decoration:none;-webkit-tap-highlight-color:transparent}
-.scard:active{background:#162035}
+.scard{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:11px;margin-bottom:7px;display:flex;align-items:center;gap:11px;cursor:pointer;text-decoration:none}
+.scard:active{opacity:0.8}
 .sico{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
 .sname{font-size:13px;font-weight:600;color:var(--text)}
 .sdesc{font-size:10px;color:var(--muted);margin-top:2px}
 .bf{font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(74,222,128,0.1);color:var(--green);border:1px solid rgba(74,222,128,0.2);font-weight:600;flex-shrink:0}
 .bp{font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(251,191,36,0.1);color:var(--yellow);border:1px solid rgba(251,191,36,0.2);font-weight:600;flex-shrink:0}
 
-/* MODAL */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:300;align-items:flex-end;justify-content:center}
 .overlay.open{display:flex}
 .modal{background:#0f1f36;border:1px solid var(--border);border-radius:20px 20px 0 0;width:100%;max-width:500px;max-height:88vh;overflow-y:auto;padding:18px 15px 30px;animation:slideUp .2s}
@@ -112,11 +99,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 .mclose{background:rgba(100,116,139,0.2);border:none;color:var(--text);font-size:18px;cursor:pointer;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
 .stream-opt{background:var(--bg);border:1px solid var(--border);border-radius:11px;padding:12px;margin-bottom:7px;display:flex;align-items:center;gap:11px;cursor:pointer;text-decoration:none}
-.stream-opt:active{background:#0c1829}
-.so-icon{font-size:22px;width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.stream-opt:active{opacity:0.8}
+.so-icon{font-size:20px;width:40px;height:40px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .so-name{font-size:13px;font-weight:600;color:var(--text)}
 .so-desc{font-size:10px;color:var(--muted);margin-top:2px}
-.sec-head{font-size:11px;font-weight:600;margin:13px 0 7px}
+.sec-head{font-size:11px;font-weight:600;margin:12px 0 7px;padding:5px 10px;border-radius:6px}
 
 .swrap{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 11px;margin-bottom:10px}
 .swrap input{border:none;background:transparent;color:var(--text);font-size:13px;outline:none;flex:1}
@@ -125,17 +112,11 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 .loading{text-align:center;padding:35px 20px;color:var(--muted);font-size:13px}
 .spinner{width:26px;height:26px;border:2px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin .7s linear infinite;margin:0 auto 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.ebox{background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.2);border-radius:10px;padding:12px;text-align:center;color:#f87171;font-size:12px;line-height:1.6}
+.ebox{background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.2);border-radius:10px;padding:12px;text-align:center;color:#f87171;font-size:12px;line-height:1.8}
 
 .tips-box{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:12px;margin-top:12px}
 .tr{font-size:11px;color:#94a3b8;padding:3px 0;line-height:1.7;border-bottom:1px solid rgba(30,58,95,0.4)}
 .tr:last-child{border-bottom:none}
-
-/* PWA INSTALL BANNER */
-.install-banner{background:linear-gradient(135deg,#1a472a,#0d3d20);border:1px solid rgba(74,222,128,0.3);border-radius:12px;padding:12px 14px;margin-bottom:12px;display:flex;align-items:center;gap:10px}
-.ib-text{flex:1;font-size:12px;color:var(--text);line-height:1.5}
-.ib-btn{background:var(--green);color:#0a1628;font-size:12px;font-weight:700;padding:7px 12px;border-radius:8px;border:none;cursor:pointer;flex-shrink:0;white-space:nowrap}
-
 @media(max-width:360px){.mfl{font-size:19px}.sc{font-size:20px}}
 </style>
 </head>
@@ -155,13 +136,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
   <button class="nb" onclick="showTab('stream',this)"><span class="ico">📡</span>Stream</button>
 </nav>
 
-<!-- LIVE -->
 <div id="tab-live" class="tab active">
-  <div id="install-hint" class="install-banner" style="display:none">
-    <span style="font-size:22px">📲</span>
-    <div class="ib-text"><b>App হিসেবে Install করুন!</b><br>Browser menu → "Add to Home Screen"</div>
-    <button class="ib-btn" onclick="document.getElementById('install-hint').style.display='none'">✕</button>
-  </div>
   <div class="fbar">
     <button class="fbtn active" onclick="setFilter('all',this)">সব</button>
     <button class="fbtn" onclick="setFilter('live',this)">🔴 Live</button>
@@ -169,62 +144,37 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
     <button class="fbtn" onclick="setFilter('upcoming',this)">আসন্ন</button>
     <button class="fbtn" onclick="setFilter('finished',this)">শেষ</button>
   </div>
-  <div id="live-content">
-    <div class="skel" style="height:110px"></div>
-    <div class="skel" style="height:110px"></div>
-    <div class="skel" style="height:110px"></div>
-  </div>
+  <div id="live-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
 </div>
 
-<!-- FIXTURES -->
 <div id="tab-fixtures" class="tab">
   <div id="fixtures-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
 </div>
 
-<!-- STANDINGS -->
 <div id="tab-standings" class="tab">
   <div id="standings-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
 </div>
 
-<!-- TEAMS -->
 <div id="tab-teams" class="tab">
-  <div class="swrap"><span>🔍</span><input type="text" id="tsearch" placeholder="দলের নাম / Search team..." oninput="filterTeams(this.value)"></div>
+  <div class="swrap"><span>🔍</span><input type="text" placeholder="দলের নাম / Search..." oninput="filterTeams(this.value)"></div>
   <div id="teams-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
 </div>
 
-<!-- STREAM -->
 <div id="tab-stream" class="tab">
   <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:9px">📱 ক্লিক করলেই সরাসরি খুলবে</div>
-  <a href="https://toffee.com.bd" target="_blank" class="scard">
-    <div class="sico" style="background:rgba(74,222,128,0.1)">🍬</div>
-    <div style="flex:1"><div class="sname">Toffee (Banglalink)</div><div class="sdesc">সব ১০৪ ম্যাচ · Full HD</div></div>
-    <span class="bp">Tk 99</span>
-  </a>
-  <a href="https://www.bioscope.com.bd" target="_blank" class="scard">
-    <div class="sico" style="background:rgba(96,165,250,0.1)">🎬</div>
-    <div style="flex:1"><div class="sname">Bioscope+ (GP)</div><div class="sdesc">সব ১০৪ ম্যাচ · MyGP/Skitto-তেও</div></div>
-    <span class="bp">Paid</span>
-  </a>
-  <a href="https://www.myrobi.com.bd" target="_blank" class="scard">
-    <div class="sico" style="background:rgba(251,113,133,0.1)">📱</div>
-    <div style="flex:1"><div class="sname">My Robi</div><div class="sdesc">সব ম্যাচ · Robi subscribers</div></div>
-    <span class="bp">Tk 99</span>
-  </a>
-  <a href="https://www.youtube.com/@FIFAWorldCup/streams" target="_blank" class="scard">
-    <div class="sico" style="background:rgba(220,38,38,0.1)">▶️</div>
-    <div style="flex:1"><div class="sname">FIFA YouTube</div><div class="sdesc">Official live · Highlights · ফ্রি</div></div>
-    <span class="bf">Free</span>
-  </a>
-  <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:15px 0 9px">📺 ফ্রি TV চ্যানেল (Cable)</div>
+  <a href="https://toffee.com.bd" target="_blank" class="scard"><div class="sico" style="background:rgba(74,222,128,0.1)">🍬</div><div style="flex:1"><div class="sname">Toffee (Banglalink)</div><div class="sdesc">সব ১০৪ ম্যাচ · Full HD</div></div><span class="bp">Tk 99</span></a>
+  <a href="https://www.bioscope.com.bd" target="_blank" class="scard"><div class="sico" style="background:rgba(96,165,250,0.1)">🎬</div><div style="flex:1"><div class="sname">Bioscope+ (GP)</div><div class="sdesc">সব ১০৪ ম্যাচ · MyGP/Skitto</div></div><span class="bp">Paid</span></a>
+  <a href="https://www.myrobi.com.bd" target="_blank" class="scard"><div class="sico" style="background:rgba(251,113,133,0.1)">📱</div><div style="flex:1"><div class="sname">My Robi</div><div class="sdesc">সব ম্যাচ · Robi users</div></div><span class="bp">Tk 99</span></a>
+  <a href="https://www.youtube.com/@FIFAWorldCup/streams" target="_blank" class="scard"><div class="sico" style="background:rgba(220,38,38,0.1)">▶️</div><div style="flex:1"><div class="sname">FIFA YouTube</div><div class="sdesc">Official live · Highlights · ফ্রি</div></div><span class="bf">Free</span></a>
+  <div style="font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin:14px 0 8px">📺 ফ্রি TV চ্যানেল</div>
   <div class="scard" style="cursor:default"><div class="sico" style="background:rgba(167,139,250,0.1)">📺</div><div style="flex:1"><div class="sname">BTV</div><div class="sdesc">অ্যান্টেনা ও কেবলে · সব ম্যাচ</div></div><span class="bf">Free</span></div>
   <div class="scard" style="cursor:default"><div class="sico" style="background:rgba(251,191,36,0.1)">🏆</div><div style="flex:1"><div class="sname">T Sports</div><div class="sdesc">Cable/Satellite</div></div><span class="bf">Free</span></div>
   <div class="scard" style="cursor:default"><div class="sico" style="background:rgba(52,211,153,0.1)">📡</div><div style="flex:1"><div class="sname">Somoy TV</div><div class="sdesc">Cable/Satellite</div></div><span class="bf">Free</span></div>
   <div class="tips-box">
     <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:7px">⚡ Smooth দেখার Tips</div>
     <div class="tr">✅ WiFi ব্যবহার করো</div>
-    <div class="tr">✅ ম্যাচের আগে app update করো</div>
     <div class="tr">✅ Background apps বন্ধ রাখো</div>
-    <div class="tr">✅ Video quality Auto/Medium রাখো</div>
+    <div class="tr">✅ Video quality Auto রাখো</div>
     <div class="tr">✅ ম্যাচের ১৫ মিনিট আগে open করো</div>
   </div>
 </div>
@@ -232,88 +182,64 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 <!-- STREAM MODAL -->
 <div class="overlay" id="stream-modal" onclick="if(event.target===this)closeModal('stream-modal')">
   <div class="modal">
-    <div class="mhdr">
-      <div class="mtitle" id="sm-title">সরাসরি দেখুন 📺</div>
-      <button class="mclose" onclick="closeModal('stream-modal')">✕</button>
-    </div>
-    <div id="sm-match" style="font-size:12px;color:var(--muted);margin-bottom:13px"></div>
-
-    <div class="sec-head" style="color:var(--green)">🆓 ফ্রি অপশন</div>
-    <a href="https://www.youtube.com/@FIFAWorldCup/streams" target="_blank" class="stream-opt">
-      <div class="so-icon" style="background:rgba(220,38,38,0.1)">▶️</div>
-      <div style="flex:1"><div class="so-name">FIFA YouTube Live</div><div class="so-desc">Official · সম্পূর্ণ ফ্রি</div></div>
-      <span class="bf">Free</span>
-    </a>
-    <a id="yt-live-link" href="https://www.youtube.com/results?search_query=FIFA+World+Cup+2026+live" target="_blank" class="stream-opt">
-      <div class="so-icon" style="background:rgba(220,38,38,0.08)">🔴</div>
-      <div style="flex:1"><div class="so-name">YouTube — এই ম্যাচের Live</div><div class="so-desc">অন্যান্য live stream</div></div>
-      <span class="bf">Free</span>
-    </a>
-
-    <div class="sec-head" style="color:var(--yellow)">💰 Paid (সেরা মান)</div>
-    <a href="https://toffee.com.bd" target="_blank" class="stream-opt">
-      <div class="so-icon" style="background:rgba(74,222,128,0.1)">🍬</div>
-      <div style="flex:1"><div class="so-name">Toffee</div><div class="so-desc">Full HD · Banglalink</div></div>
-      <span class="bp">Tk 99</span>
-    </a>
-    <a href="https://www.bioscope.com.bd" target="_blank" class="stream-opt">
-      <div class="so-icon" style="background:rgba(96,165,250,0.1)">🎬</div>
-      <div style="flex:1"><div class="so-name">Bioscope+</div><div class="so-desc">Full HD · GP</div></div>
-      <span class="bp">Paid</span>
-    </a>
-    <a href="https://www.myrobi.com.bd" target="_blank" class="stream-opt">
-      <div class="so-icon" style="background:rgba(251,113,133,0.1)">📱</div>
-      <div style="flex:1"><div class="so-name">My Robi</div><div class="so-desc">Full HD · Robi</div></div>
-      <span class="bp">Tk 99</span>
-    </a>
-
-    <div class="sec-head" style="color:var(--blue)">🎥 Highlights / Recap</div>
-    <a id="yt-hl-link" href="#" target="_blank" class="stream-opt">
-      <div class="so-icon" style="background:rgba(96,165,250,0.1)">🎬</div>
-      <div style="flex:1"><div class="so-name">YouTube Highlights</div><div class="so-desc">Goals · Best moments · Recap</div></div>
-      <span style="font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(96,165,250,0.1);color:var(--blue);border:1px solid rgba(96,165,250,0.2);font-weight:600;flex-shrink:0">Replay</span>
-    </a>
+    <div class="mhdr"><div><div class="mtitle">সরাসরি দেখুন 📺</div><div id="sm-match" style="font-size:11px;color:var(--muted);margin-top:3px"></div></div><button class="mclose" onclick="closeModal('stream-modal')">✕</button></div>
+    <div class="sec-head" style="background:rgba(74,222,128,0.08);color:var(--green)">🆓 ফ্রি অপশন</div>
+    <a href="https://www.youtube.com/@FIFAWorldCup/streams" target="_blank" class="stream-opt"><div class="so-icon" style="background:rgba(220,38,38,0.1)">▶️</div><div style="flex:1"><div class="so-name">FIFA YouTube Live</div><div class="so-desc">Official · সম্পূর্ণ ফ্রি</div></div><span class="bf">Free</span></a>
+    <a id="yt-live-link" href="#" target="_blank" class="stream-opt"><div class="so-icon" style="background:rgba(220,38,38,0.08)">🔴</div><div style="flex:1"><div class="so-name">এই ম্যাচের Live Search</div><div class="so-desc">YouTube-এ live stream খুঁজুন</div></div><span class="bf">Free</span></a>
+    <div class="sec-head" style="background:rgba(251,191,36,0.08);color:var(--yellow)">💰 Paid (সেরা মান)</div>
+    <a href="https://toffee.com.bd" target="_blank" class="stream-opt"><div class="so-icon" style="background:rgba(74,222,128,0.1)">🍬</div><div style="flex:1"><div class="so-name">Toffee</div><div class="so-desc">Full HD · Banglalink · Tk 99</div></div><span class="bp">Tk 99</span></a>
+    <a href="https://www.bioscope.com.bd" target="_blank" class="stream-opt"><div class="so-icon" style="background:rgba(96,165,250,0.1)">🎬</div><div style="flex:1"><div class="so-name">Bioscope+</div><div class="so-desc">Full HD · Grameenphone</div></div><span class="bp">Paid</span></a>
+    <a href="https://www.myrobi.com.bd" target="_blank" class="stream-opt"><div class="so-icon" style="background:rgba(251,113,133,0.1)">📱</div><div style="flex:1"><div class="so-name">My Robi</div><div class="so-desc">Full HD · Robi · Tk 99</div></div><span class="bp">Tk 99</span></a>
+    <div class="sec-head" style="background:rgba(96,165,250,0.08);color:var(--blue)">🎥 Highlights / Replay</div>
+    <a id="yt-hl-link" href="#" target="_blank" class="stream-opt"><div class="so-icon" style="background:rgba(96,165,250,0.1)">🎬</div><div style="flex:1"><div class="so-name">YouTube Highlights</div><div class="so-desc">Goals · Best moments · Recap</div></div><span style="font-size:10px;padding:3px 8px;border-radius:20px;background:rgba(96,165,250,0.1);color:var(--blue);border:1px solid rgba(96,165,250,0.2);font-weight:600;flex-shrink:0">Replay</span></a>
   </div>
 </div>
 
 <!-- FIXTURE DETAIL MODAL -->
 <div class="overlay" id="fixture-modal" onclick="if(event.target===this)closeModal('fixture-modal')">
   <div class="modal">
-    <div class="mhdr">
-      <div class="mtitle" id="fm-title">ম্যাচ বিস্তারিত</div>
-      <button class="mclose" onclick="closeModal('fixture-modal')">✕</button>
-    </div>
-    <div id="fm-sub" style="font-size:11px;color:var(--muted);margin-bottom:12px"></div>
-    <div id="fm-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
+    <div class="mhdr"><div class="mtitle" id="fm-title">ম্যাচ বিস্তারিত</div><button class="mclose" onclick="closeModal('fixture-modal')">✕</button></div>
+    <div id="fm-content"></div>
   </div>
 </div>
 
 <!-- TEAM DETAIL MODAL -->
 <div class="overlay" id="team-modal" onclick="if(event.target===this)closeModal('team-modal')">
   <div class="modal">
-    <div class="mhdr">
-      <div class="mtitle" id="tm-title">দল</div>
-      <button class="mclose" onclick="closeModal('team-modal')">✕</button>
-    </div>
-    <div id="tm-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
+    <div class="mhdr"><div class="mtitle" id="tm-title">দল</div><button class="mclose" onclick="closeModal('team-modal')">✕</button></div>
+    <div id="tm-content"></div>
   </div>
 </div>
 
 <script>
-const API='/api/football?path=';
-const WC='competitions/2000';
+// =====================================================
+// API — uses Vercel proxy at /api/football
+// =====================================================
+const KEY='3ef88e28409b4f3b828f25963ca17486';
+const WC_ID=2000;
+let allMatches=[],allTeams=[],curFilter='all';
 const CACHE={};
-const CACHE_TTL=60000; // 1 min cache
 
-// ---- CACHE LAYER (speed fix) ----
 async function apiFetch(path){
-  const now=Date.now();
-  if(CACHE[path]&&(now-CACHE[path].t)<CACHE_TTL) return CACHE[path].d;
-  const r=await fetch(API+encodeURIComponent(path));
-  if(!r.ok) throw new Error(`HTTP ${r.status}`);
-  const d=await r.json();
-  CACHE[path]={d,t:now};
+  if(CACHE[path]&&Date.now()-CACHE[path].t<55000) return CACHE[path].d;
+  // Try proxy first, fallback to direct with CORS mode
+  let res;
+  try{
+    res=await fetch('/api/football?path='+encodeURIComponent(path));
+    if(!res.ok) throw new Error('proxy failed');
+  }catch{
+    res=await fetch('https://api.football-data.org/v4/'+path,{
+      headers:{'X-Auth-Token':KEY,'X-Requested-With':'XMLHttpRequest'}
+    });
+  }
+  if(!res.ok) throw new Error('HTTP '+res.status);
+  const d=await res.json();
+  CACHE[path]={d,t:Date.now()};
   return d;
 }
 
-const BN={'Argentin
+// =====================================================
+// DATA
+// =====================================================
+const BN={'Argentina':'আর্জেন্টিনা','Brazil':'ব্রাজিল','France':'ফ্রান্স','Germany':'জার্মানি','Spain':'স্পেন','England':'ইংল্যান্ড','Portugal':'পর্তুগাল','Netherlands':'নেদারল্যান্ডস','Belgium':'বেলজিয়াম','Uruguay':'উরুগুয়ে','Croatia':'ক্রোয়েশিয়া','Denmark':'ডেনমার্ক','Mexico':'মেক্সিকো','United States':'যুক্তরাষ্ট্র','Canada':'কানাডা','Morocco':'মরক্কো','Senegal':'সেনেগাল','Ghana':'ঘানা','Japan':'জাপান','South Korea':'দক্ষিণ কোরিয়া','Australia':'অস্ট্রেলিয়া','Iran':'ইরান','Saudi Arabia':'সৌদি আরব','Poland':'পোল্যান্ড','Switzerland':'সুইজারল্যান্ড','Serbia':'সার্বিয়া','Ecuador':'ইকুয়েডর','Tunisia':'তিউনিসিয়া','Costa Rica':'কোস্টারিকা','Colombia':'কলম্বিয়া','Nigeria':'নাইজেরিয়া','Egypt':'মিশর','Italy':'ইতালি','Turkey':'তুরস্ক','Ukraine':'ইউক্রেন','Czech Republic':'চেক প্রজাতন্ত্র','Austria':'অস্ট্রিয়া','Sweden':'সুইডেন','Norway':'নরওয়ে','Scotland':'স্কটল্যান্ড','New Zealand':'নিউজিল্যান্ড','Panama':'পানামা','Venezuela':'ভেনেজুয়েলা','Bolivia':'বলিভিয়া','Peru':'পেরু','Paraguay':'প্যারাগুয়ে','Jamaica':'জামাইকা','Honduras':'হন্ডুরাস','El Salvador':'এল সালভাদর','Qatar':'কাতার','Wales':'ওয়েলস','Algeria':'আলজেরিয়া','Ivory Coast':'আইভরি কোস্ট','Chile':'চিলি','Kenya':'কেনিয়া','Cuba':'কিউবা','Guatemala':'গুয়াতেমালা','Mozambique':'মোজাম্বিক'};
+const FL={'Argentina':'🇦🇷','Brazil':'🇧🇷','France':'🇫🇷','Germany':'🇩🇪','Spain':'🇪🇸','England':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Portugal':'🇵🇹','Netherlands':'🇳🇱','Belgium':'🇧🇪','Uruguay':'🇺🇾','Croatia':'🇭🇷','Denmark':'🇩🇰','Mexico':'🇲🇽','United States':'🇺🇸','Canada':'🇨🇦','Morocco':'🇲🇦','Senegal':'🇸
