@@ -6,165 +6,165 @@
 <title>FIFA World Cup 2026 🏆</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --bg:#0a1628;--card:#0f1f36;--border:#1e3a5f;--green:#4ade80;--green-dark:#1a472a;
-  --text:#e2e8f0;--muted:#64748b;--yellow:#fbbf24;--red:#ef4444;--blue:#60a5fa;
-}
+:root{--bg:#0a1628;--card:#0f1f36;--border:#1e3a5f;--green:#4ade80;--gd:#1a472a;--text:#e2e8f0;--muted:#64748b;--yellow:#fbbf24;--red:#ef4444;--blue:#60a5fa}
 body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
 
-/* HEADER */
-.header{background:linear-gradient(135deg,#1a472a,#0d2818);padding:14px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.5)}
-.logo{width:42px;height:42px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.header-title{font-size:17px;font-weight:700}
-.header-sub{font-size:11px;color:#86efac;margin-top:1px}
-.live-pill{margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(220,38,38,0.2);border:1px solid rgba(220,38,38,0.4);padding:5px 10px;border-radius:20px}
-.live-dot{width:7px;height:7px;border-radius:50%;background:#ef4444;animation:blink 1.2s infinite}
+.header{background:linear-gradient(135deg,#1a472a,#0d2818);padding:13px 16px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,0.5)}
+.logo{width:40px;height:40px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
+.htitle{font-size:16px;font-weight:700}.hsub{font-size:11px;color:#86efac;margin-top:1px}
+.live-pill{margin-left:auto;display:flex;align-items:center;gap:5px;background:rgba(220,38,38,0.2);border:1px solid rgba(220,38,38,0.4);padding:4px 10px;border-radius:20px}
+.ldot{width:7px;height:7px;border-radius:50%;background:#ef4444;animation:blink 1.2s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:0.3}}
 
-/* NAV */
 .nav{display:flex;background:#0c1829;border-bottom:1px solid var(--border);overflow-x:auto;-webkit-overflow-scrolling:touch}
 .nav::-webkit-scrollbar{display:none}
-.nav-btn{flex:1;min-width:65px;padding:11px 6px 9px;font-size:11px;border:none;background:transparent;cursor:pointer;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:3px;border-bottom:2px solid transparent;transition:all 0.2s;white-space:nowrap}
-.nav-btn .ico{font-size:19px}
-.nav-btn.active{color:var(--green);border-bottom-color:var(--green);background:rgba(74,222,128,0.05)}
+.nb{flex:1;min-width:62px;padding:10px 4px 8px;font-size:10px;border:none;background:transparent;cursor:pointer;color:var(--muted);display:flex;flex-direction:column;align-items:center;gap:3px;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.nb .ico{font-size:18px}
+.nb.active{color:var(--green);border-bottom-color:var(--green);background:rgba(74,222,128,0.05)}
 
-/* TABS */
-.tab{display:none;padding:14px;max-width:600px;margin:0 auto;animation:fadeIn 0.2s}
+.tab{display:none;padding:13px;max-width:600px;margin:0 auto;animation:fi .2s}
 .tab.active{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+@keyframes fi{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 
-/* SECTION LABEL */
-.sec-label{font-size:11px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.slabel{font-size:10px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
 
 /* MATCH CARD */
-.match-card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:10px;transition:border-color 0.2s}
-.match-card.live-now{border-color:rgba(220,38,38,0.5);box-shadow:0 0 12px rgba(220,38,38,0.1)}
-.match-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.match-stage{font-size:11px;color:var(--muted)}
-.badge-live{display:flex;align-items:center;gap:4px;background:rgba(220,38,38,0.15);color:#f87171;font-size:11px;font-weight:600;padding:3px 8px;border-radius:20px;border:1px solid rgba(220,38,38,0.3)}
-.badge-upcoming{font-size:11px;color:var(--yellow);background:rgba(251,191,36,0.1);padding:3px 8px;border-radius:20px;border:1px solid rgba(251,191,36,0.2)}
-.badge-done{font-size:11px;color:var(--muted);background:rgba(100,116,139,0.1);padding:3px 8px;border-radius:20px}
-.match-body{display:flex;align-items:center;justify-content:space-between;gap:6px}
-.m-team{display:flex;flex-direction:column;align-items:center;gap:5px;flex:1;min-width:0}
-.m-flag{font-size:26px}
-.m-name{font-size:11px;font-weight:600;color:var(--text);text-align:center;line-height:1.3}
-.score-wrap{display:flex;align-items:center;gap:6px;flex-shrink:0}
-.score{font-size:28px;font-weight:700;color:#fff;min-width:26px;text-align:center}
-.score-sep{font-size:20px;color:#334155;font-weight:700}
-.vs{font-size:14px;color:#334155;font-weight:600}
-.match-foot{display:flex;justify-content:space-between;align-items:center;margin-top:11px;padding-top:10px;border-top:1px solid var(--border)}
-.match-time{font-size:11px;color:var(--muted)}
-.watch-btn{font-size:12px;font-weight:600;padding:6px 14px;background:rgba(26,71,42,0.8);color:var(--green);border:1px solid rgba(74,222,128,0.3);border-radius:8px;cursor:pointer;transition:all 0.2s}
-.watch-btn:hover{background:var(--green-dark);border-color:var(--green)}
+.mc{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:13px;margin-bottom:10px}
+.mc.live-now{border-color:rgba(220,38,38,0.5)}
+.mmeta{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+.mstage{font-size:10px;color:var(--muted)}
+.bl{display:flex;align-items:center;gap:4px;background:rgba(220,38,38,0.15);color:#f87171;font-size:10px;font-weight:600;padding:3px 8px;border-radius:20px;border:1px solid rgba(220,38,38,0.3)}
+.bu{font-size:10px;color:var(--yellow);background:rgba(251,191,36,0.1);padding:3px 8px;border-radius:20px;border:1px solid rgba(251,191,36,0.2)}
+.bd{font-size:10px;color:var(--muted);background:rgba(100,116,139,0.1);padding:3px 8px;border-radius:20px}
+.mbody{display:flex;align-items:center;justify-content:space-between;gap:6px}
+.mteam{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1;min-width:0}
+.mfl{font-size:24px}
+.men{font-size:11px;font-weight:600;color:var(--text);text-align:center;line-height:1.2}
+.mbn{font-size:10px;color:var(--muted);text-align:center;line-height:1.2}
+.sw{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.sc{font-size:26px;font-weight:700;color:#fff;min-width:24px;text-align:center}
+.ss{font-size:18px;color:#334155;font-weight:700}
+.vs{font-size:13px;color:#334155;font-weight:600}
+.mfoot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:9px;border-top:1px solid var(--border)}
+.mtime{font-size:10px;color:var(--muted)}
+.wbtn{font-size:11px;font-weight:600;padding:6px 12px;background:rgba(26,71,42,0.8);color:var(--green);border:1px solid rgba(74,222,128,0.3);border-radius:8px;cursor:pointer;transition:all .2s}
+.wbtn:hover{background:var(--gd)}
 
-/* FILTER BAR */
-.filter-bar{display:flex;gap:6px;margin-bottom:12px;overflow-x:auto;padding-bottom:4px}
-.filter-bar::-webkit-scrollbar{display:none}
-.filter-btn{padding:5px 12px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:12px;cursor:pointer;white-space:nowrap;transition:all 0.2s;flex-shrink:0}
-.filter-btn.active{background:rgba(74,222,128,0.1);color:var(--green);border-color:rgba(74,222,128,0.3)}
+/* FILTER */
+.fbar{display:flex;gap:6px;margin-bottom:11px;overflow-x:auto;padding-bottom:2px}
+.fbar::-webkit-scrollbar{display:none}
+.fbtn{padding:5px 11px;border-radius:20px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.fbtn.active{background:rgba(74,222,128,0.1);color:var(--green);border-color:rgba(74,222,128,0.3)}
 
 /* FIXTURE */
-.fix-date-header{font-size:12px;font-weight:600;color:var(--green);margin:14px 0 6px;display:flex;align-items:center;gap:6px}
-.fix-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:6px}
-.fix-stage{font-size:10px;color:var(--muted);margin-bottom:6px}
-.fix-row{display:flex;align-items:center;justify-content:space-between;gap:6px}
-.f-team{font-size:12px;color:var(--text);display:flex;align-items:center;gap:5px;flex:1;min-width:0}
-.f-team.r{justify-content:flex-end;flex-direction:row-reverse}
-.f-center{font-size:12px;padding:4px 8px;border-radius:6px;background:var(--bg);text-align:center;flex-shrink:0;min-width:52px}
-.f-score{font-weight:700;color:#fff}
-.f-time{color:var(--muted)}
+.fdh{font-size:12px;font-weight:600;color:var(--green);margin:13px 0 6px;display:flex;align-items:center;gap:5px}
+.fcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:6px;cursor:pointer;transition:border-color .2s}
+.fcard:hover{border-color:rgba(74,222,128,0.4)}
+.fstage{font-size:10px;color:var(--muted);margin-bottom:7px}
+.frow{display:flex;align-items:center;justify-content:space-between;gap:5px}
+.ft{font-size:12px;color:var(--text);display:flex;align-items:center;gap:4px;flex:1;min-width:0}
+.ft.r{justify-content:flex-end;flex-direction:row-reverse}
+.ft span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:90px}
+.fc{font-size:12px;padding:4px 7px;border-radius:6px;background:var(--bg);text-align:center;flex-shrink:0;min-width:50px}
+.fsc{font-weight:700;color:#fff}
+.ftm{color:var(--muted)}
 
 /* STANDINGS */
-.group-card{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
-.group-header{padding:10px 14px;background:rgba(74,222,128,0.06);border-bottom:1px solid var(--border);font-size:13px;font-weight:700;color:var(--green)}
-.st-table{width:100%;border-collapse:collapse}
-.st-table th{font-size:10px;color:var(--muted);text-transform:uppercase;padding:7px 8px;text-align:center;border-bottom:1px solid var(--border)}
-.st-table th:first-child,.st-table td:first-child{text-align:left;padding-left:12px}
-.st-table td{font-size:12px;color:var(--text);padding:9px 8px;text-align:center;border-bottom:1px solid rgba(30,58,95,0.5)}
-.st-table tr:last-child td{border-bottom:none}
-.st-table tr:hover td{background:rgba(74,222,128,0.03)}
+.gcard{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.ghdr{padding:10px 13px;background:rgba(74,222,128,0.06);border-bottom:1px solid var(--border);font-size:12px;font-weight:700;color:var(--green)}
+.stt{width:100%;border-collapse:collapse}
+.stt th{font-size:9px;color:var(--muted);text-transform:uppercase;padding:6px 6px;text-align:center;border-bottom:1px solid var(--border)}
+.stt th:first-child,.stt td:first-child{text-align:left;padding-left:10px}
+.stt td{font-size:11px;color:var(--text);padding:8px 6px;text-align:center;border-bottom:1px solid rgba(30,58,95,0.5)}
+.stt tr:last-child td{border-bottom:none}
+.stt tr:hover td{background:rgba(74,222,128,0.03)}
 .pts{font-weight:700;color:var(--yellow)}
-.pos-q{color:var(--green);font-weight:700}
+.note-box{background:rgba(74,222,128,0.05);border:1px solid rgba(74,222,128,0.15);border-radius:8px;padding:9px 12px;font-size:11px;color:#94a3b8;line-height:1.7;margin-top:8px}
 
-/* TEAM CARD */
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.team-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 10px;cursor:pointer;transition:all 0.2s;text-align:center}
-.team-card:hover{border-color:var(--green);background:rgba(74,222,128,0.04)}
-.tc-flag{font-size:28px;margin-bottom:6px}
-.tc-name{font-size:12px;font-weight:600;color:var(--text);margin-bottom:3px}
-.tc-info{font-size:10px;color:var(--muted)}
+/* TEAMS */
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.tcard{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 8px;cursor:pointer;transition:all .2s;text-align:center}
+.tcard:hover{border-color:var(--green);background:rgba(74,222,128,0.04)}
+.tcfl{font-size:26px;margin-bottom:5px}
+.tcen{font-size:12px;font-weight:600;color:var(--text);margin-bottom:2px}
+.tcbn{font-size:10px;color:var(--muted)}
 
 /* STREAM */
-.stream-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all 0.2s;text-decoration:none}
-.stream-card:hover{border-color:var(--green)}
-.sc-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.sc-name{font-size:14px;font-weight:600;color:var(--text)}
-.sc-desc{font-size:11px;color:var(--muted);margin-top:2px}
-.badge-free{font-size:11px;padding:3px 9px;border-radius:20px;background:rgba(74,222,128,0.1);color:var(--green);border:1px solid rgba(74,222,128,0.2);font-weight:600;flex-shrink:0}
-.badge-paid{font-size:11px;padding:3px 9px;border-radius:20px;background:rgba(251,191,36,0.1);color:var(--yellow);border:1px solid rgba(251,191,36,0.2);font-weight:600;flex-shrink:0}
+.scard{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:12px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;text-decoration:none}
+.scard:hover{border-color:var(--green)}
+.sico{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.sname{font-size:14px;font-weight:600;color:var(--text)}
+.sdesc{font-size:11px;color:var(--muted);margin-top:2px}
+.bf{font-size:10px;padding:3px 9px;border-radius:20px;background:rgba(74,222,128,0.1);color:var(--green);border:1px solid rgba(74,222,128,0.2);font-weight:600;flex-shrink:0}
+.bp{font-size:10px;padding:3px 9px;border-radius:20px;background:rgba(251,191,36,0.1);color:var(--yellow);border:1px solid rgba(251,191,36,0.2);font-weight:600;flex-shrink:0}
 
-/* TIPS BOX */
-.tips-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px;margin-top:16px}
-.tips-title{font-size:13px;font-weight:600;color:var(--green);margin-bottom:8px}
-.tip-row{font-size:12px;color:#94a3b8;padding:4px 0;line-height:1.6;border-bottom:1px solid rgba(30,58,95,0.4)}
-.tip-row:last-child{border-bottom:none;padding-bottom:0}
+/* MODAL */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:300;align-items:flex-end;justify-content:center;padding:0}
+.overlay.open{display:flex}
+.modal{background:#0f1f36;border:1px solid var(--border);border-radius:20px 20px 0 0;width:100%;max-width:600px;max-height:90vh;overflow-y:auto;padding:20px 16px;animation:slideUp .25s}
+@keyframes slideUp{from{transform:translateY(100%)}to{transform:none}}
+.mhdr{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.mtitle{font-size:16px;font-weight:700}
+.mclose{background:rgba(100,116,139,0.2);border:none;color:var(--text);font-size:20px;cursor:pointer;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
 
-/* LOADING & ERROR */
+/* STREAM MODAL */
+.stream-opt{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:14px;margin-bottom:8px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s;text-decoration:none}
+.stream-opt:hover{border-color:var(--green)}
+.so-icon{font-size:24px;width:44px;height:44px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.so-name{font-size:14px;font-weight:600;color:var(--text)}
+.so-desc{font-size:11px;color:var(--muted);margin-top:2px}
+.so-badge{font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;flex-shrink:0}
+
+/* TEAM DETAIL MODAL */
+.tstat-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:12px}
+.tstat-row:last-child{border-bottom:none}
+.tstat-label{color:var(--muted)}
+.tstat-val{color:var(--text);font-weight:600;text-align:right}
+
+/* STANDINGS NOTE */
+.snote{background:rgba(251,191,36,0.07);border:1px solid rgba(251,191,36,0.2);border-radius:8px;padding:10px 12px;margin-top:6px}
+.snote-row{font-size:11px;color:#94a3b8;padding:3px 0;line-height:1.6}
+
 .loading{text-align:center;padding:40px 20px;color:var(--muted)}
-.spinner{width:30px;height:30px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 12px}
+.spinner{width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--green);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 10px}
 @keyframes spin{to{transform:rotate(360deg)}}
-.err-box{background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.25);border-radius:10px;padding:14px;text-align:center;color:#f87171;font-size:13px;line-height:1.6}
+.ebox{background:rgba(220,38,38,0.08);border:1px solid rgba(220,38,38,0.25);border-radius:10px;padding:13px;text-align:center;color:#f87171;font-size:12px;line-height:1.6}
 
-/* SEARCH */
-.search-wrap{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 12px;margin-bottom:12px}
-.search-wrap input{border:none;background:transparent;color:var(--text);font-size:13px;outline:none;flex:1;min-width:0}
-.search-wrap input::placeholder{color:var(--muted)}
+.swrap{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 12px;margin-bottom:11px}
+.swrap input{border:none;background:transparent;color:var(--text);font-size:13px;outline:none;flex:1}
+.swrap input::placeholder{color:var(--muted)}
 
-/* PLAYER MODAL */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:200;align-items:center;justify-content:center;padding:16px}
-.modal-overlay.open{display:flex}
-.modal{background:#0f1f36;border:1px solid var(--border);border-radius:16px;width:100%;max-width:400px;max-height:80vh;overflow-y:auto;padding:20px}
-.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
-.modal-title{font-size:16px;font-weight:700}
-.modal-close{background:transparent;border:none;color:var(--muted);font-size:22px;cursor:pointer;line-height:1}
+.tips-box{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:13px;margin-top:14px}
+.tr{font-size:12px;color:#94a3b8;padding:4px 0;line-height:1.6;border-bottom:1px solid rgba(30,58,95,0.4)}
+.tr:last-child{border-bottom:none}
 
-@media(max-width:380px){
-  .m-flag{font-size:22px}
-  .score{font-size:22px}
-  .team-grid{grid-template-columns:1fr 1fr}
-}
+@media(max-width:380px){.mfl{font-size:20px}.sc{font-size:20px}}
 </style>
 </head>
 <body>
 
 <div class="header">
   <div class="logo">⚽</div>
-  <div>
-    <div class="header-title">FIFA World Cup 2026</div>
-    <div class="header-sub">USA · Canada · Mexico</div>
-  </div>
-  <div class="live-pill">
-    <div class="live-dot"></div>
-    <span style="font-size:11px;font-weight:600">LIVE</span>
-  </div>
+  <div><div class="htitle">FIFA World Cup 2026</div><div class="hsub">USA · Canada · Mexico</div></div>
+  <div class="live-pill"><div class="ldot"></div><span style="font-size:11px;font-weight:600">LIVE</span></div>
 </div>
 
 <nav class="nav">
-  <button class="nav-btn active" onclick="showTab('live',this)"><span class="ico">📺</span>Live Score</button>
-  <button class="nav-btn" onclick="showTab('fixtures',this)"><span class="ico">📅</span>Fixtures</button>
-  <button class="nav-btn" onclick="showTab('standings',this)"><span class="ico">🏅</span>Standings</button>
-  <button class="nav-btn" onclick="showTab('teams',this)"><span class="ico">🛡️</span>Teams</button>
-  <button class="nav-btn" onclick="showTab('stream',this)"><span class="ico">📡</span>Stream</button>
+  <button class="nb active" onclick="showTab('live',this)"><span class="ico">📺</span>Live Score</button>
+  <button class="nb" onclick="showTab('fixtures',this)"><span class="ico">📅</span>Fixtures</button>
+  <button class="nb" onclick="showTab('standings',this)"><span class="ico">🏅</span>Standings</button>
+  <button class="nb" onclick="showTab('teams',this)"><span class="ico">🛡️</span>Teams</button>
+  <button class="nb" onclick="showTab('stream',this)"><span class="ico">📡</span>Stream</button>
 </nav>
 
 <!-- LIVE -->
 <div id="tab-live" class="tab active">
-  <div class="filter-bar">
-    <button class="filter-btn active" onclick="setFilter('all',this)">সব ম্যাচ</button>
-    <button class="filter-btn" onclick="setFilter('live',this)">🔴 Live</button>
-    <button class="filter-btn" onclick="setFilter('today',this)">আজকের</button>
-    <button class="filter-btn" onclick="setFilter('upcoming',this)">আসন্ন</button>
-    <button class="filter-btn" onclick="setFilter('finished',this)">শেষ হয়েছে</button>
+  <div class="fbar">
+    <button class="fbtn active" onclick="setFilter('all',this)">সব ম্যাচ</button>
+    <button class="fbtn" onclick="setFilter('live',this)">🔴 Live</button>
+    <button class="fbtn" onclick="setFilter('today',this)">আজকের</button>
+    <button class="fbtn" onclick="setFilter('upcoming',this)">আসন্ন</button>
+    <button class="fbtn" onclick="setFilter('finished',this)">শেষ</button>
   </div>
   <div id="live-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
 </div>
@@ -181,283 +181,148 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--te
 
 <!-- TEAMS -->
 <div id="tab-teams" class="tab">
-  <div class="search-wrap">
-    <span>🔍</span>
-    <input type="text" id="team-search" placeholder="দলের নাম লিখুন..." oninput="filterTeams(this.value)">
-  </div>
+  <div class="swrap"><span>🔍</span><input type="text" id="tsearch" placeholder="দলের নাম লিখুন / Search team..." oninput="filterTeams(this.value)"></div>
   <div id="teams-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
 </div>
 
 <!-- STREAM -->
 <div id="tab-stream" class="tab">
-  <div class="sec-label">📱 অ্যাপ স্ট্রিমিং</div>
-
-  <a href="https://toffee.com.bd" target="_blank" class="stream-card">
-    <div class="sc-icon" style="background:rgba(74,222,128,0.1)">🍬</div>
-    <div style="flex:1"><div class="sc-name">Toffee (Banglalink)</div><div class="sc-desc">সব ১০৪ ম্যাচ · Full HD · সেরা মান</div></div>
-    <span class="badge-paid">Tk 99</span>
+  <div class="slabel">📱 অ্যাপ স্ট্রিমিং — ক্লিক করলেই সরাসরি খুলবে</div>
+  <a href="https://toffee.com.bd" target="_blank" class="scard">
+    <div class="sico" style="background:rgba(74,222,128,0.1)">🍬</div>
+    <div style="flex:1"><div class="sname">Toffee (Banglalink)</div><div class="sdesc">সব ১০৪ ম্যাচ · Full HD · Banglalink users</div></div>
+    <span class="bp">Tk 99</span>
+  </a>
+  <a href="https://www.bioscope.com.bd" target="_blank" class="scard">
+    <div class="sico" style="background:rgba(96,165,250,0.1)">🎬</div>
+    <div style="flex:1"><div class="sname">Bioscope+ (GP)</div><div class="sdesc">সব ১০৪ ম্যাচ · MyGP ও Skitto-তেও</div></div>
+    <span class="bp">Paid</span>
+  </a>
+  <a href="https://www.myrobi.com.bd" target="_blank" class="scard">
+    <div class="sico" style="background:rgba(251,113,133,0.1)">📱</div>
+    <div style="flex:1"><div class="sname">My Robi</div><div class="sdesc">সব ম্যাচ · Robi subscribers</div></div>
+    <span class="bp">Tk 99</span>
+  </a>
+  <a href="https://www.youtube.com/@FIFAWorldCup" target="_blank" class="scard">
+    <div class="sico" style="background:rgba(220,38,38,0.1)">▶️</div>
+    <div style="flex:1"><div class="sname">FIFA YouTube (ফ্রি)</div><div class="sdesc">Highlights · Recap · Official clips</div></div>
+    <span class="bf">Free</span>
   </a>
 
-  <a href="https://www.bioscope.com.bd" target="_blank" class="stream-card">
-    <div class="sc-icon" style="background:rgba(96,165,250,0.1)">🎬</div>
-    <div style="flex:1"><div class="sc-name">Bioscope+ (Grameenphone)</div><div class="sc-desc">সব ১০৪ ম্যাচ · MyGP ও Skitto-তেও</div></div>
-    <span class="badge-paid">Paid</span>
-  </a>
-
-  <a href="https://www.myrobi.com.bd" target="_blank" class="stream-card">
-    <div class="sc-icon" style="background:rgba(251,113,133,0.1)">📱</div>
-    <div style="flex:1"><div class="sc-name">My Robi</div><div class="sc-desc">সব ম্যাচ · Robi subscribers-দের জন্য</div></div>
-    <span class="badge-paid">Tk 99</span>
-  </a>
-
-  <div class="sec-label" style="margin-top:20px">📺 ফ্রি TV চ্যানেল (Cable/Satellite)</div>
-
-  <div class="stream-card" style="cursor:default">
-    <div class="sc-icon" style="background:rgba(167,139,250,0.1)">📺</div>
-    <div style="flex:1"><div class="sc-name">BTV</div><div class="sc-desc">Bangladesh Television · সব ম্যাচ · অ্যান্টেনা ও কেবলে</div></div>
-    <span class="badge-free">Free</span>
+  <div class="slabel" style="margin-top:18px">📺 ফ্রি TV চ্যানেল</div>
+  <div class="scard" style="cursor:default">
+    <div class="sico" style="background:rgba(167,139,250,0.1)">📺</div>
+    <div style="flex:1"><div class="sname">BTV</div><div class="sdesc">Bangladesh Television · অ্যান্টেনা ও কেবলে</div></div>
+    <span class="bf">Free</span>
   </div>
-  <div class="stream-card" style="cursor:default">
-    <div class="sc-icon" style="background:rgba(251,191,36,0.1)">🏆</div>
-    <div style="flex:1"><div class="sc-name">T Sports</div><div class="sc-desc">Leading sports channel</div></div>
-    <span class="badge-free">Free</span>
+  <div class="scard" style="cursor:default">
+    <div class="sico" style="background:rgba(251,191,36,0.1)">🏆</div>
+    <div style="flex:1"><div class="sname">T Sports</div><div class="sdesc">Leading sports channel · Cable</div></div>
+    <span class="bf">Free</span>
   </div>
-  <div class="stream-card" style="cursor:default">
-    <div class="sc-icon" style="background:rgba(52,211,153,0.1)">📡</div>
-    <div style="flex:1"><div class="sc-name">Somoy TV</div><div class="sc-desc">Cable/Satellite</div></div>
-    <span class="badge-free">Free</span>
+  <div class="scard" style="cursor:default">
+    <div class="sico" style="background:rgba(52,211,153,0.1)">📡</div>
+    <div style="flex:1"><div class="sname">Somoy TV</div><div class="sdesc">Cable/Satellite</div></div>
+    <span class="bf">Free</span>
   </div>
 
   <div class="tips-box">
-    <div class="tips-title">⚡ Network সমস্যা ছাড়া দেখার Tips</div>
-    <div class="tip-row">✅ WiFi ব্যবহার করো — mobile data-র চেয়ে ভালো</div>
-    <div class="tip-row">✅ ম্যাচের আগে app update করো</div>
-    <div class="tip-row">✅ Background apps বন্ধ রাখো</div>
-    <div class="tip-row">✅ Video quality Auto বা Medium রাখো</div>
-    <div class="tip-row">✅ ম্যাচ শুরুর ১৫ মিনিট আগে app খোলো</div>
+    <div style="font-size:13px;font-weight:600;color:var(--green);margin-bottom:8px">⚡ Smooth দেখার Tips</div>
+    <div class="tr">✅ WiFi ব্যবহার করো — mobile data-র চেয়ে ভালো</div>
+    <div class="tr">✅ ম্যাচের আগে app update করো</div>
+    <div class="tr">✅ Background apps বন্ধ রাখো</div>
+    <div class="tr">✅ Video quality Auto বা Medium রাখো</div>
+    <div class="tr">✅ ম্যাচ শুরুর ১৫ মিনিট আগে app খোলো</div>
+  </div>
+</div>
+
+<!-- STREAM MODAL (Live Watch Options) -->
+<div class="overlay" id="stream-modal" onclick="if(event.target===this)closeModal('stream-modal')">
+  <div class="modal">
+    <div class="mhdr">
+      <div>
+        <div class="mtitle" id="sm-title">সরাসরি দেখুন</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px" id="sm-match"></div>
+      </div>
+      <button class="mclose" onclick="closeModal('stream-modal')">✕</button>
+    </div>
+
+    <div style="font-size:12px;font-weight:600;color:var(--green);margin-bottom:8px">🆓 ফ্রি অপশন</div>
+    <a href="https://www.youtube.com/@FIFAWorldCup/streams" target="_blank" class="stream-opt">
+      <div class="so-icon" style="background:rgba(220,38,38,0.1)">▶️</div>
+      <div style="flex:1"><div class="so-name">FIFA YouTube</div><div class="so-desc">Official live stream · সম্পূর্ণ ফ্রি</div></div>
+      <span class="so-badge bf">Free</span>
+    </a>
+    <a href="https://www.youtube.com/results?search_query=FIFA+World+Cup+2026+live" target="_blank" class="stream-opt">
+      <div class="so-icon" style="background:rgba(220,38,38,0.08)">🔴</div>
+      <div style="flex:1"><div class="so-name">YouTube Live Search</div><div class="so-desc">অন্যান্য live stream খুঁজুন</div></div>
+      <span class="so-badge bf">Free</span>
+    </a>
+
+    <div style="font-size:12px;font-weight:600;color:var(--yellow);margin:14px 0 8px">💰 Paid অপশন (সেরা মান)</div>
+    <a href="https://toffee.com.bd" target="_blank" class="stream-opt">
+      <div class="so-icon" style="background:rgba(74,222,128,0.1)">🍬</div>
+      <div style="flex:1"><div class="so-name">Toffee</div><div class="so-desc">Full HD · Banglalink</div></div>
+      <span class="so-badge bp">Tk 99</span>
+    </a>
+    <a href="https://www.bioscope.com.bd" target="_blank" class="stream-opt">
+      <div class="so-icon" style="background:rgba(96,165,250,0.1)">🎬</div>
+      <div style="flex:1"><div class="so-name">Bioscope+</div><div class="so-desc">Full HD · Grameenphone</div></div>
+      <span class="so-badge bp">Paid</span>
+    </a>
+    <a href="https://www.myrobi.com.bd" target="_blank" class="stream-opt">
+      <div class="so-icon" style="background:rgba(251,113,133,0.1)">📱</div>
+      <div style="flex:1"><div class="so-name">My Robi</div><div class="so-desc">Full HD · Robi</div></div>
+      <span class="so-badge bp">Tk 99</span>
+    </a>
+
+    <div style="font-size:12px;font-weight:600;color:var(--blue);margin:14px 0 8px">🎥 Highlights / Recap</div>
+    <a id="yt-highlights-link" href="#" target="_blank" class="stream-opt">
+      <div class="so-icon" style="background:rgba(96,165,250,0.1)">🎬</div>
+      <div style="flex:1"><div class="so-name">YouTube Highlights</div><div class="so-desc">Best moments · Goals · Recap video</div></div>
+      <span class="so-badge" style="background:rgba(96,165,250,0.1);color:var(--blue);border:1px solid rgba(96,165,250,0.2)">Replay</span>
+    </a>
+  </div>
+</div>
+
+<!-- FIXTURE DETAIL MODAL -->
+<div class="overlay" id="fixture-modal" onclick="if(event.target===this)closeModal('fixture-modal')">
+  <div class="modal">
+    <div class="mhdr">
+      <div>
+        <div class="mtitle" id="fm-title">দলের বিস্তারিত</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px" id="fm-sub"></div>
+      </div>
+      <button class="mclose" onclick="closeModal('fixture-modal')">✕</button>
+    </div>
+    <div id="fm-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
+  </div>
+</div>
+
+<!-- TEAM DETAIL MODAL -->
+<div class="overlay" id="team-modal" onclick="if(event.target===this)closeModal('team-modal')">
+  <div class="modal">
+    <div class="mhdr">
+      <div>
+        <div class="mtitle" id="tm-title">দল</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:2px" id="tm-sub"></div>
+      </div>
+      <button class="mclose" onclick="closeModal('team-modal')">✕</button>
+    </div>
+    <div id="tm-content"><div class="loading"><div class="spinner"></div>লোড হচ্ছে...</div></div>
   </div>
 </div>
 
 <script>
-const API = '/api/football?path=';
-const WC = 'competitions/2000';
+const API='/api/football?path=';
+const WC='competitions/2000';
 
-const FLAGS = {'Argentina':'🇦🇷','Brazil':'🇧🇷','France':'🇫🇷','Germany':'🇩🇪','Spain':'🇪🇸','England':'🏴󠁧󠁢󠁥󠁮󠁧󠁿','Portugal':'🇵🇹','Netherlands':'🇳🇱','Belgium':'🇧🇪','Uruguay':'🇺🇾','Croatia':'🇭🇷','Denmark':'🇩🇰','Mexico':'🇲🇽','United States':'🇺🇸','Canada':'🇨🇦','Morocco':'🇲🇦','Senegal':'🇸🇳','Ghana':'🇬🇭','Japan':'🇯🇵','South Korea':'🇰🇷','Australia':'🇦🇺','Iran':'🇮🇷','Saudi Arabia':'🇸🇦','Poland':'🇵🇱','Switzerland':'🇨🇭','Serbia':'🇷🇸','Ecuador':'🇪🇨','Tunisia':'🇹🇳','Costa Rica':'🇨🇷','Colombia':'🇨🇴','Nigeria':'🇳🇬','Egypt':'🇪🇬','Italy':'🇮🇹','Turkey':'🇹🇷','Ukraine':'🇺🇦','Czech Republic':'🇨🇿','Austria':'🇦🇹','Sweden':'🇸🇪','Norway':'🇳🇴','Scotland':'🏴󠁧󠁢󠁳󠁣󠁴󠁿','New Zealand':'🇳🇿','Panama':'🇵🇦','Venezuela':'🇻🇪','Bolivia':'🇧🇴','Peru':'🇵🇪','Paraguay':'🇵🇾','Jamaica':'🇯🇲','Honduras':'🇭🇳','El Salvador':'🇸🇻','Qatar':'🇶🇦','Wales':'🏴󠁧󠁢󠁷󠁬󠁳󠁿','Algeria':'🇩🇿','Ivory Coast':'🇨🇮','Mali':'🇲🇱','Guinea':'🇬🇳','Zambia':'🇿🇲','Tanzania':'🇹🇿','Mozambique':'🇲🇿','Uganda':'🇺🇬','Kenya':'🇰🇪','Cuba':'🇨🇺','Guatemala':'🇬🇹','Trinidad and Tobago':'🇹🇹'};
-
-function flag(n){return FLAGS[n]||'🏳️'}
-
-function bdtTime(utc){
-  const d=new Date(utc);
-  return d.toLocaleTimeString('en-BD',{hour:'2-digit',minute:'2-digit',timeZone:'Asia/Dhaka',hour12:true});
-}
-function bdtDate(utc){
-  const d=new Date(utc);
-  const days=['রবি','সোম','মঙ্গল','বুধ','বৃহ','শুক্র','শনি'];
-  const months=['জানু','ফেব্রু','মার্চ','এপ্রিল','মে','জুন','জুলাই','আগস্ট','সেপ্টেম্বর','অক্টোবর','নভেম্বর','ডিসেম্বর'];
-  const bdt=new Date(d.getTime()+6*3600000);
-  return `${days[bdt.getUTCDay()]}, ${bdt.getUTCDate()} ${months[bdt.getUTCMonth()]}`;
-}
-function bdtDateKey(utc){
-  const d=new Date(utc);
-  const bdt=new Date(d.getTime()+6*3600000);
-  return bdt.toISOString().split('T')[0];
-}
-
-async function api(path){
-  const r=await fetch(API+encodeURIComponent(path));
-  if(!r.ok)throw new Error(`Error ${r.status}`);
-  return r.json();
-}
-
-// ---- FILTER STATE ----
-let allMatches=[];
-let currentFilter='all';
-
-function setFilter(f,btn){
-  currentFilter=f;
-  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  renderLive();
-}
-
-function renderLive(){
-  const el=document.getElementById('live-content');
-  const today=new Date().toISOString().split('T')[0];
-
-  let filtered=allMatches;
-  if(currentFilter==='live') filtered=allMatches.filter(m=>m.status==='IN_PLAY'||m.status==='PAUSED');
-  else if(currentFilter==='today') filtered=allMatches.filter(m=>bdtDateKey(m.utcDate)===today);
-  else if(currentFilter==='upcoming') filtered=allMatches.filter(m=>m.status==='SCHEDULED'||m.status==='TIMED');
-  else if(currentFilter==='finished') filtered=allMatches.filter(m=>m.status==='FINISHED');
-
-  if(filtered.length===0){
-    el.innerHTML=`<div class="err-box">এই ফিল্টারে কোনো ম্যাচ নেই।</div>`;
-    return;
-  }
-
-  el.innerHTML=filtered.slice(0,20).map(m=>{
-    const home=m.homeTeam?.name||'TBD';
-    const away=m.awayTeam?.name||'TBD';
-    const hs=m.score?.fullTime?.home??m.score?.halfTime?.home;
-    const as=m.score?.fullTime?.away??m.score?.halfTime?.away;
-    const isLive=m.status==='IN_PLAY'||m.status==='PAUSED';
-    const isDone=m.status==='FINISHED';
-
-    const scoreHTML=(isLive||isDone)&&hs!==null
-      ?`<span class="score">${hs}</span><span class="score-sep">–</span><span class="score">${as}</span>`
-      :`<span class="vs">VS</span>`;
-
-    const badge=isLive
-      ?`<div class="badge-live"><div class="live-dot"></div>LIVE</div>`
-      :isDone?`<span class="badge-done">✅ শেষ</span>`
-      :`<span class="badge-upcoming">⏰ ${bdtTime(m.utcDate)}</span>`;
-
-    return `<div class="match-card${isLive?' live-now':''}">
-      <div class="match-meta">
-        <span class="match-stage">${m.stage||'Group Stage'} · MD${m.matchday||'?'}</span>
-        ${badge}
-      </div>
-      <div class="match-body">
-        <div class="m-team"><div class="m-flag">${flag(home)}</div><div class="m-name">${home}</div></div>
-        <div class="score-wrap">${scoreHTML}</div>
-        <div class="m-team"><div class="m-flag">${flag(away)}</div><div class="m-name">${away}</div></div>
-      </div>
-      <div class="match-foot">
-        <span class="match-time">📅 ${bdtDate(m.utcDate)} · ${bdtTime(m.utcDate)} BDT</span>
-        <button class="watch-btn" onclick="document.querySelectorAll('.nav-btn')[4].click()">দেখুন 📺</button>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-async function loadLive(){
-  const el=document.getElementById('live-content');
-  try{
-    const data=await api(`${WC}/matches?limit=64`);
-    allMatches=data.matches||[];
-    if(allMatches.length===0){
-      el.innerHTML=`<div class="err-box">এখনো ম্যাচ পাওয়া যাচ্ছে না।</div>`;
-      return;
-    }
-    renderLive();
-  }catch(e){
-    el.innerHTML=`<div class="err-box">⚠️ ডেটা লোড হয়নি।<br><small style="color:#94a3b8">${e.message}</small></div>`;
-  }
-}
-
-// ---- FIXTURES ----
-async function loadFixtures(){
-  const el=document.getElementById('fixtures-content');
-  try{
-    if(allMatches.length===0){const d=await api(`${WC}/matches?limit=100`);allMatches=d.matches||[];}
-    const matches=allMatches;
-    const grouped={};
-    matches.forEach(m=>{
-      const k=bdtDateKey(m.utcDate);
-      if(!grouped[k])grouped[k]=[];
-      grouped[k].push(m);
-    });
-    el.innerHTML=Object.keys(grouped).sort().map(date=>{
-      const label=bdtDate(grouped[date][0].utcDate);
-      const cards=grouped[date].map(m=>{
-        const home=m.homeTeam?.name||'TBD';
-        const away=m.awayTeam?.name||'TBD';
-        const hs=m.score?.fullTime?.home;
-        const as=m.score?.fullTime?.away;
-        const center=(m.status==='FINISHED'&&hs!==null)
-          ?`<span class="f-center f-score">${hs}–${as}</span>`
-          :`<span class="f-center f-time">${bdtTime(m.utcDate)}</span>`;
-        return `<div class="fix-card">
-          <div class="fix-stage">${m.stage||'Group Stage'} · Matchday ${m.matchday||'?'}</div>
-          <div class="fix-row">
-            <div class="f-team">${flag(home)} <span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${home}</span></div>
-            ${center}
-            <div class="f-team r"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:right">${away}</span> ${flag(away)}</div>
-          </div>
-        </div>`;
-      }).join('');
-      return `<div class="fix-date-header">📅 ${label}</div>${cards}`;
-    }).join('');
-  }catch(e){
-    el.innerHTML=`<div class="err-box">⚠️ ফিক্সচার লোড হয়নি।<br><small>${e.message}</small></div>`;
-  }
-}
-
-// ---- STANDINGS ----
-async function loadStandings(){
-  const el=document.getElementById('standings-content');
-  try{
-    const data=await api(`${WC}/standings`);
-    const standings=data.standings||[];
-    if(!standings.length){
-      el.innerHTML=`<div class="err-box">🏅 গ্রুপ পর্ব শুরু হলে এখানে পয়েন্ট টেবিল দেখা যাবে।</div>`;
-      return;
-    }
-    el.innerHTML=standings.map(g=>`
-      <div class="group-card">
-        <div class="group-header">🏟️ ${g.group||g.stage}</div>
-        <table class="st-table">
-          <tr><th>#</th><th>দল</th><th>ম্যা</th><th>জ</th><th>ড্র</th><th>হা</th><th>পয়</th></tr>
-          ${g.table.map((r,i)=>`<tr>
-            <td class="pos-q">${i+1}</td>
-            <td>${flag(r.team.name)} ${r.team.shortName||r.team.name}</td>
-            <td>${r.playedGames}</td><td>${r.won}</td><td>${r.draw}</td><td>${r.lost}</td>
-            <td class="pts">${r.points}</td>
-          </tr>`).join('')}
-        </table>
-      </div>`).join('');
-  }catch(e){
-    el.innerHTML=`<div class="err-box">⚠️ স্ট্যান্ডিং লোড হয়নি।<br><small>${e.message}</small></div>`;
-  }
-}
-
-// ---- TEAMS ----
-let allTeams=[];
-async function loadTeams(){
-  const el=document.getElementById('teams-content');
-  try{
-    const data=await api(`${WC}/teams`);
-    allTeams=data.teams||[];
-    renderTeams(allTeams);
-  }catch(e){
-    el.innerHTML=`<div class="err-box">⚠️ দলের তথ্য লোড হয়নি।<br><small>${e.message}</small></div>`;
-  }
-}
-function filterTeams(q){
-  const f=allTeams.filter(t=>t.name.toLowerCase().includes(q.toLowerCase())||(t.area?.name||'').toLowerCase().includes(q.toLowerCase()));
-  renderTeams(f);
-}
-const popular=['Argentina','Brazil','France','Germany','Spain','England','Portugal','Netherlands','Morocco','Japan','United States','Canada','Mexico'];
-function renderTeams(teams){
-  const el=document.getElementById('teams-content');
-  const sorted=[...teams].sort((a,b)=>{const ai=popular.indexOf(a.name),bi=popular.indexOf(b.name);if(ai>-1&&bi>-1)return ai-bi;if(ai>-1)return -1;if(bi>-1)return 1;return a.name.localeCompare(b.name);});
-  el.innerHTML=`<div class="team-grid">${sorted.map(t=>`
-    <div class="team-card" onclick="window.open('https://www.google.com/search?q=${encodeURIComponent(t.name+' FIFA World Cup 2026 squad')}','_blank')">
-      <div class="tc-flag">${flag(t.name)}</div>
-      <div class="tc-name">${t.name}</div>
-      <div class="tc-info">${t.area?.name||''}</div>
-    </div>`).join('')}</div>`;
-}
-
-// ---- TABS ----
-const loaded={};
-function showTab(name,btn){
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('tab-'+name).classList.add('active');
-  btn.classList.add('active');
-  if(!loaded[name]){
-    loaded[name]=true;
-    if(name==='fixtures')loadFixtures();
-    else if(name==='standings')loadStandings();
-    else if(name==='teams')loadTeams();
-  }
-}
-
-// INIT
-loaded['live']=true;
-loadLive();
-setInterval(loadLive,60000);
-</script>
-</body>
-</html>
+const BN_NAMES={
+  'Argentina':'আর্জেন্টিনা','Brazil':'ব্রাজিল','France':'ফ্রান্স','Germany':'জার্মানি',
+  'Spain':'স্পেন','England':'ইংল্যান্ড','Portugal':'পর্তুগাল','Netherlands':'নেদারল্যান্ডস',
+  'Belgium':'বেলজিয়াম','Uruguay':'উরুগুয়ে','Croatia':'ক্রোয়েশিয়া','Denmark':'ডেনমার্ক',
+  'Mexico':'মেক্সিকো','United States':'যুক্তরাষ্ট্র','Canada':'কানাডা','Morocco':'মরক্কো',
+  'Senegal':'সেনেগাল','Ghana':'ঘানা','Japan':'জাপান','South Korea':'দক্ষিণ কোরিয়া',
+  'Australia':'অস্ট্রেলিয়া','Iran':'ইরান','Saudi Arabia':'সৌদি আরব','Poland':'পোল্যান্ড',
+  'Switzerland':'সুইজারল্যান্ড','Serbia':'সার্বিয়া','Ecuador':'ইকুয়েডর','Tunisia':'তিউনিসিয়া',
+  'Costa Rica':'কোস্টারিকা'
