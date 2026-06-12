@@ -1,0 +1,14 @@
+{
+  "name": "FIFA World Cup 2026",
+  "short_name": "WC 2026",
+  "description": "FIFA World Cup 2026 Live Score, Fixtures & Stream",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#0d2818",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "https://em-content.zobj.net/source/google/387/soccer-ball_26bd.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "https://em-content.zobj.net/source/google/387/soccer-ball_26bd.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
